@@ -1,0 +1,38 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/vue?useUnicode=true&chaarcterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: fu19980918.
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 20MB
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: sys_
+      logic-delete-field: delete
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+
+
+#pagehelper:
+#  helperDialect: mysql
+#  reasonable: true
+#  supportMethodsArguments: true
+
+
+#文件的存储路径
+files:
+  upload:
+    path: E:/vue/files/
